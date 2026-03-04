@@ -172,6 +172,24 @@
         const allCrimes = document.querySelectorAll(".wrapper___U2Ap7");
         allCrimes.forEach((crimeNode) => {
             processCrime(crimeNode);
+    return { lower, upper };
+  }
+
+  function getFactionId() {
+    let factionId = "";
+    try {
+      const ft = document.querySelector(".forum-thread");
+      if (!ft.href) {
+        return null;
+      }
+
+      ft.href
+        .split("#")[1]
+        .split("&")
+        .forEach((elem) => {
+          if (elem[0] == "a") {
+            factionId = elem.split("=")[1];
+          }
         });
     }
 
