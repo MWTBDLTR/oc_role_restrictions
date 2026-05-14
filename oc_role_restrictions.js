@@ -239,13 +239,13 @@
     const ocId = wrapper.getAttribute("data-oc-id");
     if (!ocId || crimeData[ocId]) return;
 
-    const titleEl = wrapper.querySelector("p.panelTitle___aoGuV");
+    const titleEl = wrapper.querySelector('p[class*="panelTitle__"]');
     if (!titleEl) return;
 
     const crimeTitle = titleEl.textContent.trim();
     const roles = [];
 
-    const roleEls = wrapper.querySelectorAll(".title___UqFNy");
+    const roleEls = wrapper.querySelectorAll('[class*="title__"]');
     roleEls.forEach((roleEl) => {
       const roleName = roleEl.textContent.trim();
       const successEl = roleEl.nextElementSibling;
@@ -262,7 +262,7 @@
         successEl.textContent = `${chance}/${evaluation.lower}`;
       }
 
-      const slotHeader = roleEl.closest("button.slotHeader___K2BS_");
+      const slotHeader = roleEl.closest('button[class*="slotHeader__"]');
       if (slotHeader) {
         if (chance >= evaluation.upper) {
           //slotHeader.style.backgroundColor = "#ca6f1e";
@@ -280,7 +280,7 @@
   function setupMutationObserver(root) {
     const observer = new MutationObserver(() => {
       const tabTitle = document
-        .querySelector("button.active___ImR61 span.tabName___DdwH3")
+        .querySelector('button[class*="active__"] span[class*="tabName__"]')
         ?.textContent.trim();
 
       if (tabTitle !== "Recruiting" && tabTitle !== "Planning") return;
@@ -290,7 +290,7 @@
         previousTab = tabTitle;
       }
 
-      const allCrimes = document.querySelectorAll(".wrapper___U2Ap7");
+      const allCrimes = document.querySelectorAll('[class*="wrapper__"]');
       allCrimes.forEach((crimeNode) => {
         processCrime(crimeNode);
       });
