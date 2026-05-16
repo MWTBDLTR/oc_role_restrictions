@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Torn OC Role Restrictions
 // @namespace    https://xentac.github.io
-// @version      0.9
+// @version      0.9.1
 // @description  Highlight role restrictions and best roles in OC 2.0 (modified copy of "Torn OC Role Evaluator"). Well paired with https://greasyfork.org/en/scripts/526834-oc-success-chance-2-0
 // @author       underko[3362751], xentac[3354782], MrChurch[3654415]
 // @match        https://www.torn.com/factions.php?step=your#/tab=crimes
